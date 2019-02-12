@@ -11,6 +11,12 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var patientRouter = require('./routes/patient')
+var caregiverRouter = require('./routes/caregiver')
+var hsavisitRouter = require('./routes/hsavisit')
+var diagnosisRouter = require('./routes/diagnosis')
+var treatmentRouter = require('./routes/treatment')
+var treatmentdiagnosisRouter = require('./routes/treatmentdiagnosis')
+var symptomsRouter = require('./routes/symptoms')
 
 var app = express();
 
@@ -27,9 +33,15 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/patient', patientRouter);
+app.use('/', indexRouter)
+app.use('/users', usersRouter)
+app.use('/patient', patientRouter)
+app.use('/caregiver', caregiverRouter)
+app.use('/hsavisit', hsavisitRouter)
+app.use('/diagnosis', diagnosisRouter)
+app.use('/treatment', treatmentRouter)
+app.use('/treatmentdiagnosis', treatmentdiagnosisRouter)
+app.use('/symptoms', symptomsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
