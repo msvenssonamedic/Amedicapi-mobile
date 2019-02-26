@@ -4,6 +4,8 @@ var Treatment_Diagnosis = require('../models/Treatment_Diagnosis')
 // CREATE
 exports.treatmentdiagnosis_create_post = function(req, res) {
 
+    Treatment_Diagnosis.create(req.body).then(result => res.send(result))
+
 }
 
 // READ
