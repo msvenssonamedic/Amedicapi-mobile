@@ -1,4 +1,3 @@
-
 var Treatment = require('../models/Treatment')
 
 // CREATE

@@ -1,4 +1,3 @@
-
 var Treatment_Diagnosis = require('../models/Treatment_Diagnosis')
 
 // CREATE

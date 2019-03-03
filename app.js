@@ -8,6 +8,8 @@ var mysql = require('mysql');
 var con = require('./connect');
 var cors = require('cors')
 
+var loginRouter = require('./routes/login')
+var hsaRouter = require('./routes/hsa')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var patientRouter = require('./routes/patient')
@@ -33,9 +35,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
+/*
+let handlers = new HandlerGenerator();
+app.post('/login', handlers.login);
+app.get('/', middleware.checkToken, handlers.index);
+*/
 
-app.use('/', indexRouter)
+//app.use('/', indexRouter)
+app.use('/', loginRouter)
 app.use('/users', usersRouter)
+app.use('/hsa', hsaRouter)
 app.use('/patient', patientRouter)
 app.use('/caregiver', caregiverRouter)
 app.use('/hsavisit', hsavisitRouter)

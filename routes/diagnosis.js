@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var diagnosis_controller = require('../controllers/diagnosisController')
+let middleware = require('../middleware')
 
 /* POST create caregiver. */
 router.post('/', diagnosis_controller.diagnosis_create_post)

@@ -1,4 +1,3 @@
-
 var Patient = require('../models/Patient')
 
 // CREATE

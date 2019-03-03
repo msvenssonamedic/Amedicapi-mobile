@@ -1,4 +1,3 @@
-//const bcrypt = require('bcrypt');
 const DataTypes = require('sequelize/lib/data-types');
 const db = require('../connect.js');
 
