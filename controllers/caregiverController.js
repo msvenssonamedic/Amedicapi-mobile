@@ -17,7 +17,7 @@ exports.caregiver_get_all = function(req, res) {
 
 exports.caregiver_get_by_id = function(req, res) {
 
-    CareGiver.findAll({ where: {nationalID: req.params.id} }).then(result => {
+    CareGiver.findAll({ where: {ID: req.params.id} }).then(result => {
         res.status(200).send(result)
       })
 

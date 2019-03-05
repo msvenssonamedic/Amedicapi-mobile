@@ -1,3 +1,4 @@
+/* jshint indent: 2 */
 const DataTypes = require('sequelize/lib/data-types');
 const db = require('../connect.js');
 
@@ -12,12 +13,12 @@ var Patient = db.define('Patient', {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    nationalID: {
+    national_id: {
       type: DataTypes.INTEGER(11),
       allowNull: true,
       unique: true
     },
-    mobileNo: {
+    mobile_no: {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
@@ -25,7 +26,7 @@ var Patient = db.define('Patient', {
       type: DataTypes.STRING(10),
       allowNull: true
     },
-    villageName: {
+    village_name: {
       type: DataTypes.STRING(255),
       allowNull: true,
       references: {
@@ -33,13 +34,12 @@ var Patient = db.define('Patient', {
         key: 'name'
       }
     },
-    dateOfBirth: {
+    date_of_birth: {
       type: DataTypes.DATEONLY,
       allowNull: true
-    }
+    },
   }, {
     tableName: 'Patient',
     timestamps: false
   });
-  
 module.exports = Patient;

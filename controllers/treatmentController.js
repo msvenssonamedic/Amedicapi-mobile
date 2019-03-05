@@ -29,5 +29,8 @@ exports.treatment_update_put = function(req, res) {
 
 // DELETE
 exports.treatment_delete = function(req, res) {
-    
+    Treatment.destroy({
+        where: {ID: req.params.id}
+    })
+    .then(result => res.status(200).send(`Treatment with id ${req.params.id} deleted.`))
 }

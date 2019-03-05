@@ -11,7 +11,7 @@ var cors = require('cors')
 var loginRouter = require('./routes/login')
 var hsaRouter = require('./routes/hsa')
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var userRouter = require('./routes/user');
 var patientRouter = require('./routes/patient')
 var caregiverRouter = require('./routes/caregiver')
 var hsavisitRouter = require('./routes/hsavisit')
@@ -20,6 +20,11 @@ var diagnosisRouter = require('./routes/diagnosis')
 var treatmentRouter = require('./routes/treatment')
 var treatmentdiagnosisRouter = require('./routes/treatmentdiagnosis')
 var symptomsRouter = require('./routes/symptoms')
+var visitRouter = require('./routes/visit')
+var villageRouter = require('./routes/village')
+var districtRouter = require('./routes/district')
+var caregiverpatientRouter = require('./routes/caregiverpatient')
+var evaluateRouter = require('./routes/evaluate')
 
 var app = express();
 
@@ -43,7 +48,7 @@ app.get('/', middleware.checkToken, handlers.index);
 
 //app.use('/', indexRouter)
 app.use('/', loginRouter)
-app.use('/users', usersRouter)
+app.use('/user', userRouter)
 app.use('/hsa', hsaRouter)
 app.use('/patient', patientRouter)
 app.use('/caregiver', caregiverRouter)
@@ -53,6 +58,11 @@ app.use('/diagnosis', diagnosisRouter)
 app.use('/treatment', treatmentRouter)
 app.use('/treatmentdiagnosis', treatmentdiagnosisRouter)
 app.use('/symptoms', symptomsRouter)
+app.use('/visit', visitRouter)
+app.use('/village', villageRouter)
+app.use('/district', districtRouter)
+app.use('/caregiverpatient', caregiverpatientRouter)
+app.use('/evaluate', evaluateRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

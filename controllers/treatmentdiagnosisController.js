@@ -16,7 +16,7 @@ exports.treatmentdiagnosis_get_all = function(req, res) {
 
 exports.treatmentdiagnosis_get_by_diagnosisid = function(req, res) {
 
-    Treatment_Diagnosis.findAll({ where: {diagnosisID: req.params.id} }).then(result => {
+    Treatment_Diagnosis.findAll({ where: {diagnosis_id: req.params.id} }).then(result => {
         res.status(200).send(result)
       })
 
@@ -29,5 +29,8 @@ exports.treatmentdiagnosis_update_put = function(req, res) {
 
 // DELETE
 exports.treatmentdiagnosis_delete = function(req, res) {
-    
+    Treatment_Diagnosis.destroy({
+        where: {diagnosis_id: req.params.id}
+    })
+    .then(result => res.status(200).send(`Treatmentdiagnosis with diagnosis_id ${req.params.id} deleted.`))
 }

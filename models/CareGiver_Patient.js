@@ -2,27 +2,27 @@
 const DataTypes = require('sequelize/lib/data-types');
 const db = require('../connect.js');
 
-var Treatment_Diagnosis = db.define('Treatment_Diagnosis', {
-treatment_id: {
+var CareGiver_Patient = db.define('CareGiver_Patient', {
+    patient_id: {
       type: DataTypes.INTEGER(10).UNSIGNED,
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'Treatment',
+        model: 'Patient',
         key: 'ID'
       }
     },
-    diagnosis_id: {
+    caregiver_id: {
       type: DataTypes.INTEGER(10).UNSIGNED,
       allowNull: false,
       primaryKey: true,
       references: {
-        model: 'Diagnosis',
+        model: 'CareGiver',
         key: 'ID'
       }
     }
   }, {
-    tableName: 'Treatment_Diagnosis',
+    tableName: 'CareGiver_Patient',
     timestamps: false
   });
-module.exports =  Treatment_Diagnosis;
+module.exports = CareGiver_Patient;

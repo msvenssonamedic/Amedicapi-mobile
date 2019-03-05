@@ -30,5 +30,8 @@ exports.diagnosis_update_put = function(req, res) {
 
 // DELETE
 exports.diagnosis_delete = function(req, res) {
-
+    Diagnosis.destroy({
+        where: {ID: req.params.id}
+    })
+    .then(result => res.status(200).send(`Diagnosis with id ${req.params.id} deleted.`))
 }

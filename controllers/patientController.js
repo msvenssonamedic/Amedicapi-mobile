@@ -18,7 +18,7 @@ exports.patient_get_by_id = function(req, res) {
 
     //Patient.findById(req.params.id).then(result => res.send(result))
 
-    Patient.findOne({ where: {nationalID: req.params.id} }).then(result => {
+    Patient.findOne({ where: {ID: req.params.id} }).then(result => {
         res.status(200).send(result)
         // project will be the first entry of the Projects table with the title 'aProject' || null
       })

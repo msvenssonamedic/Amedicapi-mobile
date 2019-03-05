@@ -1,3 +1,4 @@
+/* jshint indent: 2 */
 const DataTypes = require('sequelize/lib/data-types');
 const db = require('../connect.js');
 
@@ -16,7 +17,7 @@ var SymptomsSheet = db.define('SymptomsSheet', {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    coughDays: {
+    cough_days: {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
@@ -24,11 +25,11 @@ var SymptomsSheet = db.define('SymptomsSheet', {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    diarrhoeaDays: {
+    diarrhoea_days: {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
-    bloodInStool: {
+    blood_in_stool: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
@@ -36,7 +37,7 @@ var SymptomsSheet = db.define('SymptomsSheet', {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
-    feverDays: {
+    fever_days: {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
@@ -44,11 +45,11 @@ var SymptomsSheet = db.define('SymptomsSheet', {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    difficultToEatDrink: {
+    difficult_to_eat_drink: {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    cannotEatDrink: {
+    cannot_eat_drink: {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
@@ -56,31 +57,31 @@ var SymptomsSheet = db.define('SymptomsSheet', {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    vomitsEverything: {
+    vomits_everything: {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    redEyes: {
+    red_eyes: {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    redEyesDays: {
+    red_eyes_days: {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
-    difficultiesToSee: {
+    difficulties_to_see: {
       type: DataTypes.INTEGER(1),
       allowNull: true
     },
-    difficultiesToSeeDays: {
+    difficulties_to_see_days: {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
-    chestIndraw: {
+    chest_indraw: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    breathingFreq: {
+    breathing_freq: {
       type: DataTypes.INTEGER(11),
       allowNull: true
     },
@@ -92,7 +93,7 @@ var SymptomsSheet = db.define('SymptomsSheet', {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    palmarPalor: {
+    palmar_palor: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
@@ -100,12 +101,12 @@ var SymptomsSheet = db.define('SymptomsSheet', {
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    swollenFeet: {
+    swollen_feet: {
       type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
-    tableName: 'SymptomsSheet',
+    tableName: 'Symptoms_Sheet',
     timestamps: false
   });
 module.exports = SymptomsSheet;

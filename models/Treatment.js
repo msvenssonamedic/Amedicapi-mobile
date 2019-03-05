@@ -1,3 +1,4 @@
+/* jshint indent: 2 */
 const DataTypes = require('sequelize/lib/data-types');
 const db = require('../connect.js');
 
@@ -12,7 +13,7 @@ const db = require('../connect.js');
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    treatmentScheme: {
+    treatment_Scheme: {
       type: DataTypes.STRING(255),
       allowNull: true
     },
@@ -20,7 +21,7 @@ const db = require('../connect.js');
       type: DataTypes.STRING(255),
       allowNull: true
     },
-    drugAdministration: {
+    drug_administration: {
       type: DataTypes.STRING(255),
       allowNull: true
     }
