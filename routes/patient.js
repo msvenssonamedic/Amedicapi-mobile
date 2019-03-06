@@ -14,6 +14,9 @@ router.get('/', patient_controller.patient_get_all)
 //router.get('/:id', middleware.checkToken, patient_controller.patient_get_by_id)
 router.get('/:id', patient_controller.patient_get_by_id)
 
+
+router.get('/nationalid/:id', patient_controller.patient_get_by_national_id)
+
 /* PUT update patient. */
 router.put('/:id', patient_controller.patient_update_put)
 
