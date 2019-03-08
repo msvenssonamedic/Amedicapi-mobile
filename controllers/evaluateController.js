@@ -21,10 +21,10 @@ exports.evaluate_create_post = function(req, res) {
     // Evaluate symptoms sheet to determine what diagnosis to put.
     if(req.body.symptoms_sheet.fever > 37 ) {
         // Link visit to fever diagnosis.
-        visitObject.diagnosis_id = 4
+        visitObject.diagnosis_id = 1
     } else {
         // Link visit to not fever diagnosis.
-        visitObject.diagnosis_id = 4
+        visitObject.diagnosis_id = 2
     }
 
     visitObject.patient_id = req.body.patient_id
