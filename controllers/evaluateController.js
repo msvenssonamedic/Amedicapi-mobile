@@ -6,7 +6,6 @@ var SymptomsSheet = require('../models/SymptomsSheet')
 class VisitObject {
     constructor() {
         this.patient_id = null
-        this.diagnosis_id = null
         this.user_id = null
         this.symptoms_sheet_id = null
         this.timestamp = null
@@ -17,15 +16,6 @@ class VisitObject {
 exports.evaluate_create_post = function(req, res) {
 
     let visitObject = new VisitObject()
-
-    // Evaluate symptoms sheet to determine what diagnosis to put.
-    if(req.body.symptoms_sheet.fever > 37 ) {
-        // Link visit to fever diagnosis.
-        visitObject.diagnosis_id = 1
-    } else {
-        // Link visit to not fever diagnosis.
-        visitObject.diagnosis_id = 2
-    }
 
     visitObject.patient_id = req.body.patient_id
     visitObject.timestamp = req.body.timestamp
@@ -40,11 +30,10 @@ exports.evaluate_create_post = function(req, res) {
     })
 
     function createVisit() {
-        if(visitObject.user_id != null && 
-            visitObject.diagnosis_id != null &&
+        if(visitObject.user_id != null &&
             visitObject.patient_id != null ) {
                 // Create symptoms sheet
-                SymptomsSheet.create(req.body.symptoms_sheet).then(result =>{
+                SymptomsSheet.create(req.body.symptoms_sheet).then(result => {
                     result = result.toJSON()
         
                     visitObject.symptoms_sheet_id = result.ID
@@ -60,8 +49,6 @@ exports.evaluate_create_post = function(req, res) {
                 console.log('visitObject is missing values.')
             }
     }
-
-    
 
 }
 

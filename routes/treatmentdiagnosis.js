@@ -2,19 +2,19 @@ var express = require('express')
 var router = express.Router()
 var treatmentdiagnosis_controller = require('../controllers/treatmentdiagnosisController')
 
-/* POST create caregiver. */
+/* POST create treatmentdiagnosis. */
 router.post('/', treatmentdiagnosis_controller.treatmentdiagnosis_create_post)
 
-/* GET all caregivers.  */
+/* GET all treatmentdiagnosis.  */
 router.get('/', treatmentdiagnosis_controller.treatmentdiagnosis_get_all)
 
-/* GET caregiver by id. */
+/* GET treatmentdiagnosis by id. */
 router.get('/:id', treatmentdiagnosis_controller.treatmentdiagnosis_get_by_diagnosisid)
 
-/* PUT update caregiver. */
+/* PUT update treatmentdiagnosis. */
 router.put('/:id', treatmentdiagnosis_controller.treatmentdiagnosis_update_put)
 
-/* DELETE caregiver. */
+/* DELETE treatmentdiagnosis. */
 router.delete('/:id', treatmentdiagnosis_controller.treatmentdiagnosis_delete)
 
 module.exports = router;

@@ -22,15 +22,6 @@ var Visit = db.define('Visit', {
         key: 'ID'
       }
     },
-    diagnosis_id: {
-      type: DataTypes.INTEGER(10).UNSIGNED,
-      allowNull: false,
-        unique: true,
-        references: {
-        model: 'Diagnosis',
-        key: 'ID'
-      }
-    },
     user_id: {
       type: DataTypes.INTEGER(10).UNSIGNED,
       allowNull: false,
